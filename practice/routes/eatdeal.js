@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', async (req, res) => {
+const eatdealController = require('../controller/eatdeal');
 
-});
-
+router.get('/', eatdealController.readAll);
 router.put('/scrap', async (req, res) => {
 
 });

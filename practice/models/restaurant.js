@@ -10,6 +10,17 @@ const restaurant = {
         } catch (err) {
             throw err;
         }
+    },
+
+    advertise : async () => {
+        const query = `SELECT * FROM advertise`;
+
+        try{
+            const result = await pool.queryParam(query);
+            return result;
+        } catch(err){
+            throw err;
+        }
     }
 }
 
