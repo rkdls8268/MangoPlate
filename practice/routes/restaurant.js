@@ -5,8 +5,6 @@ const restaurantController = require('../controller/restaurant');
 
 router.get('/', restaurantController.readAll);
 router.get('/ad', restaurantController.advertise); 
-router.put('/scrap', async (req, res) => {
-
-});
+router.put('/scrap', restaurantController.scrap);
 
 module.exports = router;

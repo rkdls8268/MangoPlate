@@ -1,8 +1,9 @@
 const pool = require('../modules/pool');
+const table = 'restaurant';
 
 const restaurant = {
     readAll : async () => {
-        const query = "SELECT * FROM restaurant";
+        const query = `SELECT * FROM ${table}`;
 
         try {
             const result = await pool.queryParam(query);
@@ -21,6 +22,31 @@ const restaurant = {
         } catch(err){
             throw err;
         }
+    },
+
+    scrap : async (restaurantIdx, scrap) => {
+        if(scrap == false){
+            var firstQuery = `INSERT INTO restaurantscrap (restaurantIdx) VALUES(${restaurantIdx})`;
+            var secondQuery = `UPDATE ${table} SET scrap=true WHERE restaurantIdx = ${restaurantIdx}`;
+            var finalQuery = `SELECT * FROM ${table} WHERE restaurantIdx = ${restaurantIdx}`;
+        }
+        else{
+            var firstQuery = `DELETE FROM restaurantscrap WHERE restaurantIdx = ${restaurantIdx}`;
+            var secondQuery = `UPDATE ${table} SET scrap=false WHERE restaurantIdx = ${restaurantIdx}`;
+            var finalQuery = `SELECT * FROM ${table} WHERE restaurantIdx = ${restaurantIdx}`;
+        }
+        try{
+            await pool.queryParam(firstQuery);
+            await pool.queryParam(secondQuery);
+            const result = await pool.queryParam(finalQuery);
+            // console.log(secondResult[0]);
+            return result;
+
+        } catch(err){
+            throw err;
+        }
+
+        
     }
 }
 

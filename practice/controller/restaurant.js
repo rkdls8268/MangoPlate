@@ -16,6 +16,16 @@ const restaurant = {
 
         res.status(statusCode.OK)
         .send(util.success(statusCode.OK, resMessage.ADVERTISE_SUCCESS, result));
+    },
+
+    scrap : async(req, res) => {
+        const restaurantIdx = req.body.restaurantIdx;
+        const scrap = req.body.scrap;
+
+        const result = await Restaurant.scrap(restaurantIdx, scrap);
+
+        res.status(statusCode.OK)
+        .send(util.success(statusCode.OK, resMessage.SCRAP_SUCCESS, result));
     }
 }
 

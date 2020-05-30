@@ -14,5 +14,6 @@ module.exports = {
     //restaurant
     RESTAURANT_LIST_SUCCESS: '맛집찾기 화면 목록 조회 성공',
     ADVERTISE_SUCCESS: '광고 조회 성공',
-    EATDEAL_LIST_SUCCESS: '망고픽 화면 목록 조회 성공'
+    EATDEAL_LIST_SUCCESS: '망고픽 화면 목록 조회 성공',
+    SCRAP_SUCCESS: '스크랩 성공'
 };

@@ -9,6 +9,16 @@ const eatdeal = {
 
         res.status(statusCode.OK)
         .send(util.success(statusCode.OK, resMessage.EATDEAL_LIST_SUCCESS, result));
+    },
+
+    scrap : async(req, res) => {
+        const eatdealIdx = req.body.eatdealIdx;
+        const scrap = req.body.scrap;
+
+        const result = await Eatdeal.scrap(eatdealIdx, scrap);
+
+        res.status(statusCode.OK)
+        .send(util.success(statusCode.OK, resMessage.SCRAP_SUCCESS, result));
     }
 }
 
