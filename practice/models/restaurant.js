@@ -3,7 +3,7 @@ const table = 'restaurant';
 
 const restaurant = {
     readAll : async () => {
-        const query = `SELECT * FROM ${table}`;
+        const query = `SELECT * FROM ${table} WHERE restaurantIdx > 5`;
 
         try {
             const result = await pool.queryParam(query);
@@ -18,14 +18,15 @@ const restaurant = {
 
         try{
             const result = await pool.queryParam(query);
+            console.log(result);
             return result;
         } catch(err){
             throw err;
         }
     },
 
-    scrap : async (restaurantIdx, scrap) => {
-        if(scrap == false){
+    scrap : async (restaurantIdx, scrap_int) => {
+        if(scrap_int == 2){
             var firstQuery = `INSERT INTO restaurantscrap (restaurantIdx) VALUES(${restaurantIdx})`;
             var secondQuery = `UPDATE ${table} SET scrap=true WHERE restaurantIdx = ${restaurantIdx}`;
             var finalQuery = `SELECT * FROM ${table} WHERE restaurantIdx = ${restaurantIdx}`;

@@ -13,8 +13,8 @@ const eatdeal = {
         }
     },
 
-    scrap : async (eatdealIdx, scrap) => {
-        if(scrap == false){
+    scrap : async (eatdealIdx, scrap_int) => {
+        if(scrap_int == 2){
             var firstQuery = `INSERT INTO eatdealscrap (eatdealIdx) VALUES(${eatdealIdx})`;
             var secondQuery = `UPDATE ${table} SET scrap=true WHERE eatdealIdx = ${eatdealIdx}`;
             var finalQuery = `SELECT * FROM ${table} WHERE eatdealIdx = ${eatdealIdx}`;
