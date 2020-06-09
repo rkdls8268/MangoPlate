@@ -3,7 +3,7 @@
 ## client/server 합동 세미나 2조 ❗❗
 김가인, 김해리
 
-### API 명세서 확인하러 가기 👇
+### 👇 API 명세서 확인하러 가기
 
 [Mango Plate API 명세서](https://github.com/rkdls8268/MangoPlate/wiki)
 
