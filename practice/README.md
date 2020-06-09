@@ -11,7 +11,7 @@
 
 ![ERD](./public/image/erd.png)
 
-## API TEST
+## API TEST 💖
 
 ### 1. 맛집찾기 목록 조회
 
@@ -45,6 +45,6 @@
 
 ![put_eat_scrap_true](./public/image/put_eat_scrap_true.png)
 
-### TERMINAL LOG
+### TERMINAL LOG 💖
 
 ![terminal](./public/image/terminal.png)
