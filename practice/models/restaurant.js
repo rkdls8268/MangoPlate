@@ -3,7 +3,7 @@ const table = 'restaurant';
 
 const restaurant = {
     readAll : async () => {
-        const query = `SELECT * FROM ${table} WHERE restaurantIdx > 5`;
+        const query = `SELECT * FROM ${table};`;
 
         try {
             const result = await pool.queryParam(query);
