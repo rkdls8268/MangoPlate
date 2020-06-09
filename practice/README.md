@@ -47,4 +47,4 @@
 
 ### TERMINAL LOG 💖
 
-![terminal](./public/image/terminal.png)
+![terminal](./public/image/terminal.PNG)
